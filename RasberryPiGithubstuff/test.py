@@ -1,12 +1,12 @@
 #test.py
 import RPi.GPIO as GPIO
 
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(2, GPIO.OUT)
 GPIO.setup(3, GPIO.OUT)
 GPIO.setup(4, GPIO.OUT)
-GPIO.setwarnings(False)
 
 GPIO.output(2, 0)
 GPIO.output(3, 0)
@@ -19,7 +19,7 @@ try:
 			GPIO.output(2, int(request[0]))
 			GPIO.output(3, int(request[1]))
 			GPIO.output(4, int(request[2]))
-		elif(request == "EXIT"):
+		elif(request == "exit"):
 			GPIO.output(2, 0)
 			GPIO.output(3, 0)
 			GPIO.output(4, 0)
